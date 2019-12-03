@@ -24,8 +24,7 @@ class Wechat extends Api {
 	
 	public function getToken(){
 		$post = $this->request->param();
-		
-		var_dump($post);
+		echo '<pre>'; print_r($post);
 	}
 	
 }
