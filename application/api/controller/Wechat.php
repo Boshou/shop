@@ -17,13 +17,14 @@ class Wechat extends Api {
     
 	public function getCode(){
 		$this->redirect_uri = urlencode($this->redirect_uri);
-		$url = "https://open.weixin.qq.com/connect/oauth2/authorize?appid=" . $this->appid . "&redirect_uri=". $this->redirect_uri ."&response_type=code&scope=snsapi_base&state=STATE#wechat_redirect";
+		$url = "https://open.weixin.qq.com/connect/oauth2/authorize?appid=" . $this->appid . "&redirect_uri=". $this->redirect_uri ."&response_type=code&scope=snsapi_userinfo&state=STATE#wechat_redirect";
 		echo $url;
 	}
 	
 	
 	public function getToken(){
-		$post = file_get_contents("php://input");
+		$post = $this->request->param();
+		
 		var_dump($post);
 	}
 	
