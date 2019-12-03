@@ -16,8 +16,8 @@ class Wechat extends Api {
 	
     
 	public function getCode(){
+		$this->redirect_uri = urlencode($this->redirect_uri);
 		$url = "https://open.weixin.qq.com/connect/oauth2/authorize?appid=" . $this->appid . "&redirect_uri=". $this->redirect_uri ."&response_type=code&scope=snsapi_base&state=STATE#wechat_redirect";
-		$url = urlencode($url);
 		echo $url;
 	}
 	
