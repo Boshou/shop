@@ -1,0 +1,25 @@
+---------------------------------------------------------------
+[ 2019-11-23T23:51:50+08:00 ] 127.0.0.1 POST wps.bobo.com/y4W3N08I7H.php/index/login?url=%2Fy4W3N08I7H.php
+[ sql ] [ DB ] CONNECT:[ UseTime:0.002438s ] mysql:host=127.0.0.1;dbname=wps;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `wpsadmin` [ RunTime:0.007909s ]
+[ sql ] [ SQL ] SELECT * FROM `wpsadmin` WHERE  `username` = 'admin' LIMIT 1 [ RunTime:0.000639s ]
+[ sql ] [ SQL ] UPDATE `wpsadmin`  SET `logintime`=1574524310,`token`='9d0b8bf6-6817-4be2-9009-ec82691b010b',`updatetime`=1574524310  WHERE  `id` = 1 [ RunTime:0.027948s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `wpsadmin_log` [ RunTime:0.005550s ]
+[ sql ] [ SQL ] INSERT INTO `wpsadmin_log` (`title` , `content` , `url` , `admin_id` , `username` , `useragent` , `ip` , `createtime`) VALUES ('登录' , '{\"url\":\"\\/y4W3N08I7H.php\",\"__token__\":\"98b5f0edaf3c54a3b350f91126c19038\",\"username\":\"admin\",\"captcha\":\"ijed\",\"keeplogin\":\"1\"}' , '/y4W3N08I7H.php/index/login?url=%2Fy4W3N08I7H.php' , 1 , 'admin' , 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.142 Safari/537.36' , '127.0.0.1' , 1574524310) [ RunTime:0.007338s ]
+---------------------------------------------------------------
+[ 2019-11-23T23:51:51+08:00 ] 127.0.0.1 GET wps.bobo.com/y4W3N08I7H.php
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001449s ] mysql:host=127.0.0.1;dbname=wps;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `wpsauth_group_access` [ RunTime:0.002535s ]
+[ sql ] [ SQL ] SELECT `aga`.`uid`,`aga`.`group_id`,`ag`.`id`,`ag`.`pid`,`ag`.`name`,`ag`.`rules` FROM `wpsauth_group_access` `aga` LEFT JOIN `wpsauth_group` `ag` ON `aga`.`group_id`=`ag`.`id` WHERE  (  aga.uid='1' and ag.status='normal' ) [ RunTime:0.000943s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `wpsauth_rule` [ RunTime:0.002635s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`condition`,`icon`,`name`,`title`,`ismenu` FROM `wpsauth_rule` WHERE  `status` = 'normal' [ RunTime:0.001052s ]
+[ sql ] [ SQL ] SELECT * FROM `wpsauth_rule` WHERE  `status` = 'normal'  AND `ismenu` = 1 ORDER BY `weigh` DESC [ RunTime:0.000922s ]
+[ sql ] [ SQL ] SELECT `name`,`pid` FROM `wpsauth_rule` WHERE  `status` = 'normal'  AND `ismenu` = 0  AND `name` LIKE '%/index' [ RunTime:0.000732s ]
+---------------------------------------------------------------
+[ 2019-11-23T23:51:51+08:00 ] 127.0.0.1 GET wps.bobo.com/y4W3N08I7H.php/dashboard?addtabs=1
+[ sql ] [ DB ] CONNECT:[ UseTime:0.003906s ] mysql:host=127.0.0.1;dbname=wps;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `wpsauth_group_access` [ RunTime:0.004179s ]
+[ sql ] [ SQL ] SELECT `aga`.`uid`,`aga`.`group_id`,`ag`.`id`,`ag`.`pid`,`ag`.`name`,`ag`.`rules` FROM `wpsauth_group_access` `aga` LEFT JOIN `wpsauth_group` `ag` ON `aga`.`group_id`=`ag`.`id` WHERE  (  aga.uid='1' and ag.status='normal' ) [ RunTime:0.001929s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `wpsauth_rule` [ RunTime:0.003718s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`condition`,`icon`,`name`,`title`,`ismenu` FROM `wpsauth_rule` WHERE  `status` = 'normal' [ RunTime:0.001546s ]
+[ sql ] [ SQL ] SELECT `title`,`remark` FROM `wpsauth_rule` WHERE  `name` = 'dashboard' LIMIT 1 [ RunTime:0.001025s ]
